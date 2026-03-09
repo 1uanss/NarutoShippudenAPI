@@ -1,146 +1,162 @@
-* {
+*{
     font-family: Ninja Naruto, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
+:root{
     --primary: #FF9900;
     --dark: #0c0c0c;
     --accent: #FFD166;
 }
 
-body {
+html, body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    height: 100vh;
-    width: 100%;
     min-height: 100vh;
+
     background-image: url("../img/naruto-uzumaki.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.title {
+/* título */
+
+.title{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80%;
     width: 100%;
-    white-space: nowrap;
+    text-align: center;
+    flex-wrap: wrap; /* evita estourar a tela */
 }
 
+/* card principal */
 
-main {
+main{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     padding: 20px;
     gap: 20px;
+
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 100%;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    width: 90%;
     max-width: 500px;
-    min-height: 500px;
 }
 
+/* dados personagem */
 
-.personagem_data {
+.personagem_data{
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    color: #FFFFFF;
+
+    color: #fff;
     background-color: var(--dark);
+
     padding: 10px;
     border-radius: 10px;
-    width: 80%;
-    font-size: 30px;
+
+    width: 100%;
+    font-size: clamp(16px, 4vw, 30px);
 }
 
-.personagemImg {
+/* imagem */
+
+.personagemImg{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 200px;
-    background-color:var(--accent);
+
+    width: 100%;
+    background-color: var(--accent);
+
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-.personagemImg img {
+.personagemImg img{
     max-width: 100%;
     height: auto;
 }
 
-.search_input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* input */
+
+.search_input{
     width: 100%;
+
     padding: 10px;
-    gap: 10px;
-    color: var(--dark);
+
     border-radius: 5px;
     border: 2px solid var(--dark);
-    font-size: clamp(8px, 5vw, 1rem);
-    box-shadow: 3px 3px 0 rgb(156, 144, 144);
+
+    font-size: clamp(12px, 3vw, 16px);
+
+    box-shadow: 3px 3px 0 rgb(156,144,144);
+
     outline: none;
+
     transition: 0.3s;
 }
 
-.search_input:focus {
+.search_input:focus{
     border-color: var(--primary);
     box-shadow: 0 0 5px var(--primary);
 }
 
-.search_input::placeholder {
+.search_input::placeholder{
     color: var(--dark);
-
 }
 
-.buttons {
+/* botões */
+
+.buttons{
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    transform: translate(0, 0);
     gap: 10px;
     width: 100%;
 }
 
-.button {
+.button{
     padding: 10px 20px;
+
     background-color: var(--dark);
-    color: #FFFFFF;
-    border: none;
+    color: #fff;
+
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
     border: 2px solid var(--dark);
-    font-size: clamp(8px, 5vw, 1rem);
-    box-shadow: 3px 3px 0 rgb(156, 144, 144);
-}
 
-.button:active {
-    box-shadow: none;
-    box-shadow: inset 0 0 5px rgb(156, 144, 144);
+    font-size: clamp(12px, 3vw, 16px);
 
-}
+    box-shadow: 3px 3px 0 rgb(156,144,144);
 
-.button {
+    cursor: pointer;
+
     transition: 0.2s;
 }
 
-.button:hover {
+.button:hover{
     transform: translateY(-2px);
+}
+
+.button:active{
+    box-shadow: inset 0 0 5px rgb(156,144,144);
 }
