@@ -1,3 +1,8 @@
+@font-face {
+    font-family:'Ninja Naruto';
+    src: url(../font/NinjaNaruto-YOn4.ttf) format('truetype');
+}
+
 *{
     font-family: "Ninja Naruto", sans-serif;
     margin: 0;
