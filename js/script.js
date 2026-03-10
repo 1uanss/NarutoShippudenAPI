@@ -2,9 +2,10 @@ const personagemName = document.querySelector('.personagem_name')
 const personagemNumber = document.querySelector('.personagem_number')
 const personagemImage = document.querySelector('.personagem_image')
 const searchInput = document.querySelector('.search_input')
+const prevButton = document.querySelector('.prevButton')
+const nextButton = document.querySelector('.nextButton')
 
-
-
+let searchNaruto = 1
 const fetchNaruto = async (naruto) => {
     // const APIresponse = await fetch(`https://dattebayo-api.onrender.com/characters?name=${naruto}`)
 
@@ -58,3 +59,19 @@ addEventListener('submit', (evente)=>{
     evente.preventDefault()
     renderNaruto(searchInput.value)
 })
+
+nextButton.addEventListener('click', () =>{
+    searchNaruto++
+    renderNaruto(searchNaruto)
+    
+})
+
+
+prevButton.addEventListener('click', () =>{
+    if(searchNaruto > 1){
+        searchNaruto--
+        renderNaruto(searchNaruto)
+    }
+})
+
+renderNaruto(searchNaruto)
